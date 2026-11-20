@@ -1,0 +1,632 @@
+{
+  "$comment": "Server-only question bank. Days cycle from #1 (2026-11-20). Answers, explainers and sources are only sent after a player locks a guess. min/max frame the reveal chart's log axis; answers must be typeable (under 1,000 trillion).",
+  "days": [
+    {
+      "questions": [
+        {
+          "id": "everest",
+          "category": "Geography",
+          "q": "How tall is Mount Everest, in metres?",
+          "unit": "m",
+          "answer": 8849,
+          "answerText": "8,849 m",
+          "min": 10,
+          "max": 1000000.0,
+          "explain": "China and Nepal announced the joint survey figure — 8,848.86 m — in 2020.",
+          "source": {
+            "name": "Wikipedia: Mount Everest",
+            "url": "https://en.wikipedia.org/wiki/Mount_Everest"
+          }
+        },
+        {
+          "id": "louvre-2024",
+          "category": "Culture",
+          "q": "How many people visited the Louvre in 2024?",
+          "unit": "visitors",
+          "answer": 8700000.0,
+          "answerText": "8.7 million",
+          "min": 10000.0,
+          "max": 1000000000.0,
+          "explain": "Still the world's most-visited museum, though down from its 2018 record of 10.2 million.",
+          "source": {
+            "name": "Louvre press release, Jan 2025",
+            "url": "https://presse.louvre.fr/8-7-million-visitors-to-the-louvre-in-2024"
+          }
+        },
+        {
+          "id": "moon-distance",
+          "category": "Space",
+          "q": "How far is the Moon from Earth on average, in kilometres?",
+          "unit": "km",
+          "answer": 384400,
+          "answerText": "384,400 km",
+          "min": 1000.0,
+          "max": 10000000000.0,
+          "explain": "You could line up about 30 Earths in the gap.",
+          "source": {
+            "name": "Wikipedia: Lunar distance",
+            "url": "https://en.wikipedia.org/wiki/Lunar_distance"
+          }
+        },
+        {
+          "id": "seconds-in-year",
+          "category": "Numbers",
+          "q": "How many seconds are there in a year?",
+          "unit": "seconds",
+          "answer": 31536000,
+          "answerText": "31,536,000",
+          "min": 1,
+          "max": 1000000000000.0,
+          "explain": "365 × 24 × 60 × 60. A leap year adds another 86,400.",
+          "source": {
+            "name": "Arithmetic"
+          }
+        },
+        {
+          "id": "bones",
+          "category": "The body",
+          "q": "How many bones are in the adult human body?",
+          "unit": "bones",
+          "answer": 206,
+          "answerText": "206",
+          "min": 1,
+          "max": 1000000.0,
+          "explain": "Newborns have around 270; many of them fuse together as we grow.",
+          "source": {
+            "name": "Wikipedia: Human skeleton",
+            "url": "https://en.wikipedia.org/wiki/Human_skeleton"
+          }
+        }
+      ]
+    },
+    {
+      "questions": [
+        {
+          "id": "burj-khalifa",
+          "category": "Engineering",
+          "q": "How tall is the Burj Khalifa, in metres?",
+          "unit": "m",
+          "answer": 828,
+          "answerText": "828 m",
+          "min": 1,
+          "max": 100000.0,
+          "explain": "The world's tallest building since 2010 — more than twice the height of the Empire State Building's roof.",
+          "source": {
+            "name": "Wikipedia: Burj Khalifa",
+            "url": "https://en.wikipedia.org/wiki/Burj_Khalifa"
+          }
+        },
+        {
+          "id": "speed-of-sound",
+          "category": "Science",
+          "q": "How fast does sound travel through air at 20 °C, in metres per second?",
+          "unit": "m/s",
+          "answer": 343,
+          "answerText": "343 m/s",
+          "min": 0.1,
+          "max": 100000.0,
+          "explain": "About 1,235 km/h — roughly a kilometre every three seconds.",
+          "source": {
+            "name": "Wikipedia: Speed of sound",
+            "url": "https://en.wikipedia.org/wiki/Speed_of_sound"
+          }
+        },
+        {
+          "id": "titanic-aboard",
+          "category": "History",
+          "q": "How many people were aboard the Titanic on its maiden voyage?",
+          "unit": "people",
+          "answer": 2224,
+          "answerText": "about 2,224",
+          "min": 10,
+          "max": 10000000.0,
+          "explain": "More than 1,500 of them died when it sank in April 1912.",
+          "source": {
+            "name": "Wikipedia: Titanic",
+            "url": "https://en.wikipedia.org/wiki/Titanic"
+          }
+        },
+        {
+          "id": "cloud-weight",
+          "category": "Nature",
+          "q": "How much does a typical fair-weather cumulus cloud weigh, in tonnes?",
+          "unit": "t",
+          "answer": 500,
+          "answerText": "about 500 t",
+          "min": 0.001,
+          "max": 10000000.0,
+          "explain": "The USGS estimate for a cloud of one cubic kilometre: about 1.1 million pounds of water, spread so thin it floats.",
+          "source": {
+            "name": "USGS Water Science School",
+            "url": "https://www.usgs.gov/water-science-school/science/how-much-does-a-cloud-weigh"
+          }
+        },
+        {
+          "id": "count-million",
+          "category": "Numbers",
+          "q": "Counting one number per second, non-stop, how many days would it take to reach one million?",
+          "unit": "days",
+          "answer": 11.574,
+          "answerText": "11.6 days",
+          "min": 0.01,
+          "max": 100000.0,
+          "explain": "1,000,000 seconds is 11 days, 13 hours and 47 minutes. Counting to a billion would take almost 32 years.",
+          "source": {
+            "name": "Arithmetic"
+          }
+        }
+      ]
+    },
+    {
+      "questions": [
+        {
+          "id": "sun-earths",
+          "category": "Space",
+          "q": "How many Earths could fit inside the Sun, by volume?",
+          "unit": "Earths",
+          "answer": 1300000.0,
+          "answerText": "about 1.3 million",
+          "min": 1,
+          "max": 10000000000.0,
+          "explain": "The Sun is about 109 times Earth's diameter — and volume grows with the cube.",
+          "source": {
+            "name": "Wikipedia: Sun",
+            "url": "https://en.wikipedia.org/wiki/Sun"
+          }
+        },
+        {
+          "id": "ocean-depth",
+          "category": "Geography",
+          "q": "What is the average depth of the world's oceans, in metres?",
+          "unit": "m",
+          "answer": 3700,
+          "answerText": "about 3,700 m",
+          "min": 1,
+          "max": 1000000.0,
+          "explain": "The deepest point, Challenger Deep, is nearly three times that — about 10,900 m.",
+          "source": {
+            "name": "Wikipedia: Ocean",
+            "url": "https://en.wikipedia.org/wiki/Ocean"
+          }
+        },
+        {
+          "id": "neurons",
+          "category": "The body",
+          "q": "About how many neurons are in the human brain?",
+          "unit": "neurons",
+          "answer": 86000000000.0,
+          "answerText": "about 86 billion",
+          "min": 100000.0,
+          "max": 100000000000000.0,
+          "explain": "The figure comes from a 2009 study that dissolved brains into a countable soup of cell nuclei.",
+          "source": {
+            "name": "Wikipedia: Human brain",
+            "url": "https://en.wikipedia.org/wiki/Human_brain"
+          }
+        },
+        {
+          "id": "great-wall",
+          "category": "Engineering",
+          "q": "How long is the Great Wall of China, counting all its sections, in kilometres?",
+          "unit": "km",
+          "answer": 21196,
+          "answerText": "21,196 km",
+          "min": 10,
+          "max": 100000000.0,
+          "explain": "China's 2012 national survey measured every branch and section, built over two millennia.",
+          "source": {
+            "name": "Wikipedia: Great Wall of China",
+            "url": "https://en.wikipedia.org/wiki/Great_Wall_of_China"
+          }
+        },
+        {
+          "id": "giraffe-neck",
+          "category": "Nature",
+          "q": "How many vertebrae are in a giraffe's neck?",
+          "unit": "vertebrae",
+          "answer": 7,
+          "answerText": "7",
+          "min": 1,
+          "max": 10000.0,
+          "explain": "The same as yours — a giraffe's are just much longer, up to about 25 cm each.",
+          "source": {
+            "name": "Wikipedia: Giraffe",
+            "url": "https://en.wikipedia.org/wiki/Giraffe"
+          }
+        }
+      ]
+    },
+    {
+      "questions": [
+        {
+          "id": "sunlight",
+          "category": "Science",
+          "q": "How long does light from the Sun take to reach Earth, in seconds?",
+          "unit": "s",
+          "answer": 499,
+          "answerText": "about 499 s",
+          "min": 0.001,
+          "max": 10000000.0,
+          "explain": "About 8 minutes 19 seconds. The light reaching you now left the Sun before you started this question.",
+          "source": {
+            "name": "Wikipedia: Sunlight",
+            "url": "https://en.wikipedia.org/wiki/Sunlight"
+          }
+        },
+        {
+          "id": "salvator-mundi",
+          "category": "Culture",
+          "q": "How much did Leonardo's ‘Salvator Mundi’ sell for at auction in 2017, in US dollars?",
+          "unit": "dollars",
+          "answer": 450300000.0,
+          "answerText": "$450.3 million",
+          "min": 1000.0,
+          "max": 1000000000000.0,
+          "explain": "The most ever paid for a painting at auction, at Christie's in New York.",
+          "source": {
+            "name": "Wikipedia: Salvator Mundi",
+            "url": "https://en.wikipedia.org/wiki/Salvator_Mundi_(Leonardo)"
+          }
+        },
+        {
+          "id": "australia-area",
+          "category": "Geography",
+          "q": "What is the area of Australia, in square kilometres?",
+          "unit": "km²",
+          "answer": 7690000.0,
+          "answerText": "7.69 million km²",
+          "min": 1000.0,
+          "max": 100000000000.0,
+          "explain": "Nearly the size of the contiguous United States, with fewer people than Texas.",
+          "source": {
+            "name": "Wikipedia: Australia",
+            "url": "https://en.wikipedia.org/wiki/Australia"
+          }
+        },
+        {
+          "id": "paper-fold",
+          "category": "Numbers",
+          "q": "If you could fold a 0.1 mm sheet of paper in half 42 times, how thick would it be, in kilometres?",
+          "unit": "km",
+          "answer": 439805,
+          "answerText": "about 440,000 km",
+          "min": 0.001,
+          "max": 1000000000.0,
+          "explain": "Every fold doubles it: 0.1 mm × 2⁴² — thick enough to reach past the Moon.",
+          "source": {
+            "name": "Arithmetic"
+          }
+        },
+        {
+          "id": "dna-length",
+          "category": "The body",
+          "q": "If you stretched out all the DNA in one human cell, how long would it be, in metres?",
+          "unit": "m",
+          "answer": 2,
+          "answerText": "about 2 m",
+          "min": 1e-06,
+          "max": 100000.0,
+          "explain": "It's packed into a nucleus about six thousandths of a millimetre across.",
+          "source": {
+            "name": "Wikipedia: DNA",
+            "url": "https://en.wikipedia.org/wiki/DNA"
+          }
+        }
+      ]
+    },
+    {
+      "questions": [
+        {
+          "id": "iss-speed",
+          "category": "Space",
+          "q": "How fast does the International Space Station travel, in km/h?",
+          "unit": "km/h",
+          "answer": 27600,
+          "answerText": "about 27,600 km/h",
+          "min": 1,
+          "max": 100000000.0,
+          "explain": "Fast enough to circle Earth about every 90 minutes — around 16 sunrises a day for the crew.",
+          "source": {
+            "name": "Wikipedia: International Space Station",
+            "url": "https://en.wikipedia.org/wiki/International_Space_Station"
+          }
+        },
+        {
+          "id": "hyperion",
+          "category": "Nature",
+          "q": "How tall is Hyperion, the tallest known living tree, in metres?",
+          "unit": "m",
+          "answer": 116,
+          "answerText": "about 116 m",
+          "min": 0.1,
+          "max": 100000.0,
+          "explain": "A coast redwood in California whose exact location is kept quiet to protect it.",
+          "source": {
+            "name": "Wikipedia: Hyperion (tree)",
+            "url": "https://en.wikipedia.org/wiki/Hyperion_(tree)"
+          }
+        },
+        {
+          "id": "pyramid-blocks",
+          "category": "History",
+          "q": "About how many stone blocks make up the Great Pyramid of Giza?",
+          "unit": "blocks",
+          "answer": 2300000.0,
+          "answerText": "about 2.3 million",
+          "min": 100,
+          "max": 100000000000.0,
+          "explain": "Built around 2560 BC, it was the tallest human-made structure on Earth for over 3,800 years.",
+          "source": {
+            "name": "Wikipedia: Great Pyramid of Giza",
+            "url": "https://en.wikipedia.org/wiki/Great_Pyramid_of_Giza"
+          }
+        },
+        {
+          "id": "tic-tac-toe",
+          "category": "Numbers",
+          "q": "How many different games of tic-tac-toe are possible?",
+          "unit": "games",
+          "answer": 255168,
+          "answerText": "255,168",
+          "min": 1,
+          "max": 1000000000000.0,
+          "explain": "Counting every move order until someone wins or the board fills. Played perfectly, every game is a draw.",
+          "source": {
+            "name": "Wikipedia: Tic-tac-toe",
+            "url": "https://en.wikipedia.org/wiki/Tic-tac-toe"
+          }
+        },
+        {
+          "id": "africa-countries",
+          "category": "Geography",
+          "q": "How many countries are there in Africa?",
+          "unit": "countries",
+          "answer": 54,
+          "answerText": "54",
+          "min": 1,
+          "max": 10000.0,
+          "explain": "54 UN member states — more than any other continent.",
+          "source": {
+            "name": "Wikipedia: Africa",
+            "url": "https://en.wikipedia.org/wiki/Africa"
+          }
+        }
+      ]
+    },
+    {
+      "questions": [
+        {
+          "id": "hottest",
+          "category": "Science",
+          "q": "What is the hottest air temperature ever officially recorded on Earth, in °C?",
+          "unit": "°C",
+          "answer": 56.7,
+          "answerText": "56.7 °C",
+          "min": 1,
+          "max": 10000.0,
+          "explain": "Measured at Furnace Creek in Death Valley, California, on 10 July 1913 — still the World Meteorological Organization's official record.",
+          "source": {
+            "name": "Wikipedia: Highest temperature recorded on Earth",
+            "url": "https://en.wikipedia.org/wiki/Highest_temperature_recorded_on_Earth"
+          }
+        },
+        {
+          "id": "ever-born",
+          "category": "History",
+          "q": "About how many humans have ever been born?",
+          "unit": "people",
+          "answer": 117000000000.0,
+          "answerText": "about 117 billion",
+          "min": 1000000.0,
+          "max": 1000000000000000.0,
+          "explain": "The Population Reference Bureau's estimate. Around 7% of everyone ever born is alive today.",
+          "source": {
+            "name": "Population Reference Bureau",
+            "url": "https://www.prb.org/articles/how-many-people-have-ever-lived-on-earth/"
+          }
+        },
+        {
+          "id": "kola",
+          "category": "Engineering",
+          "q": "How deep is the Kola Superdeep Borehole — the deepest hole humans have drilled — in metres?",
+          "unit": "m",
+          "answer": 12262,
+          "answerText": "12,262 m",
+          "min": 1,
+          "max": 100000000.0,
+          "explain": "Drilled in Russia from 1970. The rock at the bottom was about 180 °C.",
+          "source": {
+            "name": "Wikipedia: Kola Superdeep Borehole",
+            "url": "https://en.wikipedia.org/wiki/Kola_Superdeep_Borehole"
+          }
+        },
+        {
+          "id": "esb-windows",
+          "category": "Culture",
+          "q": "How many windows does the Empire State Building have?",
+          "unit": "windows",
+          "answer": 6514,
+          "answerText": "6,514",
+          "min": 10,
+          "max": 100000000.0,
+          "explain": "It went up remarkably fast: construction started in March 1930 and it opened in May 1931.",
+          "source": {
+            "name": "Wikipedia: Empire State Building",
+            "url": "https://en.wikipedia.org/wiki/Empire_State_Building"
+          }
+        },
+        {
+          "id": "venus-day",
+          "category": "Space",
+          "q": "How long is one day on Venus — one full rotation — in Earth days?",
+          "unit": "Earth days",
+          "answer": 243,
+          "answerText": "243",
+          "min": 0.01,
+          "max": 1000000.0,
+          "explain": "Longer than its year: Venus orbits the Sun in just 225 Earth days.",
+          "source": {
+            "name": "Wikipedia: Venus",
+            "url": "https://en.wikipedia.org/wiki/Venus"
+          }
+        }
+      ]
+    },
+    {
+      "questions": [
+        {
+          "id": "trans-siberian",
+          "category": "Geography",
+          "q": "How long is the Trans-Siberian Railway, Moscow to Vladivostok, in kilometres?",
+          "unit": "km",
+          "answer": 9289,
+          "answerText": "9,289 km",
+          "min": 10,
+          "max": 100000000.0,
+          "explain": "The longest railway line in the world; the full trip takes about a week.",
+          "source": {
+            "name": "Wikipedia: Trans-Siberian Railway",
+            "url": "https://en.wikipedia.org/wiki/Trans-Siberian_Railway"
+          }
+        },
+        {
+          "id": "lottery-6-49",
+          "category": "Numbers",
+          "q": "How many possible combinations are there in a pick-6-from-49 lottery?",
+          "unit": "combinations",
+          "answer": 13983816,
+          "answerText": "13,983,816",
+          "min": 1,
+          "max": 100000000000000.0,
+          "explain": "Buy one ticket a week and you'd expect to hit the jackpot about once every 270,000 years.",
+          "source": {
+            "name": "Wikipedia: Lottery mathematics",
+            "url": "https://en.wikipedia.org/wiki/Lottery_mathematics"
+          }
+        },
+        {
+          "id": "fastest-wind",
+          "category": "Nature",
+          "q": "What is the fastest wind gust ever recorded, outside of a tornado, in km/h?",
+          "unit": "km/h",
+          "answer": 408,
+          "answerText": "408 km/h",
+          "min": 1,
+          "max": 1000000.0,
+          "explain": "Measured on Barrow Island, Australia, during Cyclone Olivia in 1996.",
+          "source": {
+            "name": "Wikipedia: Cyclone Olivia",
+            "url": "https://en.wikipedia.org/wiki/Cyclone_Olivia"
+          }
+        },
+        {
+          "id": "honey-flowers",
+          "category": "Nature",
+          "q": "How many flowers do honeybees visit to make one pound (about 450 g) of honey?",
+          "unit": "flowers",
+          "answer": 2000000.0,
+          "answerText": "about 2 million",
+          "min": 10,
+          "max": 100000000000.0,
+          "explain": "The National Honey Board's estimate. A single bee makes about a twelfth of a teaspoon in its lifetime.",
+          "source": {
+            "name": "National Honey Board (widely cited estimate)"
+          }
+        },
+        {
+          "id": "statue-of-liberty",
+          "category": "Culture",
+          "q": "How tall is the Statue of Liberty, from the ground to the tip of the torch, in metres?",
+          "unit": "m",
+          "answer": 93,
+          "answerText": "93 m",
+          "min": 0.1,
+          "max": 100000.0,
+          "explain": "The copper statue itself is 46 m; the rest is pedestal and foundation.",
+          "source": {
+            "name": "Wikipedia: Statue of Liberty",
+            "url": "https://en.wikipedia.org/wiki/Statue_of_Liberty"
+          }
+        }
+      ]
+    },
+    {
+      "questions": [
+        {
+          "id": "proxima",
+          "category": "Space",
+          "q": "How far away is Proxima Centauri, the nearest star after the Sun, in kilometres?",
+          "unit": "km",
+          "answer": 40100000000000.0,
+          "answerText": "about 40 trillion km",
+          "min": 10000000.0,
+          "max": 1000000000000000.0,
+          "explain": "4.24 light-years. At Voyager 1's 61,000 km/h, the trip would take over 70,000 years.",
+          "source": {
+            "name": "Wikipedia: Proxima Centauri",
+            "url": "https://en.wikipedia.org/wiki/Proxima_Centauri"
+          }
+        },
+        {
+          "id": "panama-canal",
+          "category": "Engineering",
+          "q": "How long is the Panama Canal, in kilometres?",
+          "unit": "km",
+          "answer": 82,
+          "answerText": "82 km",
+          "min": 0.1,
+          "max": 1000000.0,
+          "explain": "Ships climb 26 m through locks to cross Gatun Lake, then descend to the other ocean.",
+          "source": {
+            "name": "Wikipedia: Panama Canal",
+            "url": "https://en.wikipedia.org/wiki/Panama_Canal"
+          }
+        },
+        {
+          "id": "walk-equator",
+          "category": "Numbers",
+          "q": "Walking non-stop at 5 km/h, how many days would it take to walk around the equator?",
+          "unit": "days",
+          "answer": 334,
+          "answerText": "334 days",
+          "min": 0.1,
+          "max": 1000000.0,
+          "explain": "The equator is 40,075 km around: 8,015 hours of walking.",
+          "source": {
+            "name": "Arithmetic (equator: 40,075 km)"
+          }
+        },
+        {
+          "id": "angel-falls",
+          "category": "Nature",
+          "q": "How tall is Angel Falls in Venezuela, the world's highest uninterrupted waterfall, in metres?",
+          "unit": "m",
+          "answer": 979,
+          "answerText": "979 m",
+          "min": 1,
+          "max": 1000000.0,
+          "explain": "Its longest single drop is 807 m — the water often turns to mist before it reaches the bottom.",
+          "source": {
+            "name": "Wikipedia: Angel Falls",
+            "url": "https://en.wikipedia.org/wiki/Angel_Falls"
+          }
+        },
+        {
+          "id": "mona-lisa",
+          "category": "Culture",
+          "q": "How tall is the Mona Lisa, in centimetres?",
+          "unit": "cm",
+          "answer": 77,
+          "answerText": "77 cm",
+          "min": 1,
+          "max": 100000.0,
+          "explain": "The poplar panel is just 77 × 53 cm. Many visitors are surprised how small it is.",
+          "source": {
+            "name": "Wikipedia: Mona Lisa",
+            "url": "https://en.wikipedia.org/wiki/Mona_Lisa"
+          }
+        }
+      ]
+    }
+  ]
+}

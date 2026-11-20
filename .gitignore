@@ -1,0 +1,8 @@
+node_modules
+data/*.sqlite*
+dist
+.DS_Store
+
+.cold-spot-backup.tar.gz
+.env
+.env.*
