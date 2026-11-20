@@ -30,12 +30,21 @@ export function decadeTicks(min: number, max: number, maxLabels = 6): number[] {
 /** Rough text width at 10px, for keeping labels inside the frame and apart. */
 const textW = (s: string) => s.length * 6.1;
 
-export function CrowdChart({ info, result }: { info: QuestionInfo; result: QuestionResult }) {
+export function CrowdChart({ info, result, sample = false }: { info: QuestionInfo; result: QuestionResult; sample?: boolean }) {
   const [hover, setHover] = useState<number | null>(null);
-  const { bins, median } = result.crowd;
+  const median = sample ? null : result.crowd.median;
   const lmin = Math.log10(info.min);
   const span = Math.log10(info.max) - lmin;
   const x = (v: number) => X0 + (X1 - X0) * Math.min(1, Math.max(0, (Math.log10(v) - lmin) / span));
+  const bins = sample ? new Array<number>(result.crowd.bins.length).fill(0) : result.crowd.bins;
+  if (sample) {
+    // Illustrative guesses expressed as multiples of this question's answer.
+    for (const ratio of [0.15, 0.3, 0.43, 0.47, 0.5, 0.6, 0.72, 0.8, 0.9, 1.1, 1.3, 1.7, 2, 3, 5]) {
+      const position = (Math.log10(result.answer * ratio) - lmin) / span;
+      bins[Math.max(0, Math.min(bins.length - 1, Math.floor(position * bins.length)))]!++;
+    }
+  }
+  const caption = sample ? "Simulated guesses" : "Where everyone guessed";
   const binW = (X1 - X0) / bins.length;
   const barW = Math.min(24, binW - 2); // 2px surface gap between bars
   const max = Math.max(1, ...bins);
@@ -83,12 +92,12 @@ export function CrowdChart({ info, result }: { info: QuestionInfo; result: Quest
 
   return (
     <figure class="crowd">
-      <figcaption class="kicker">Where everyone guessed</figcaption>
+      <figcaption class="kicker">{caption}</figcaption>
       <div class="crowd-plot">
         <svg
           viewBox={`0 0 ${W} ${H}`}
           role="img"
-          aria-label={`Histogram of ${result.crowd.players} players' guesses. ${answerText}. ${youText}. ${crowdText}.`}
+          aria-label={`${caption}. ${answerText}. ${youText}. ${crowdText}.`}
           onPointerMove={onMove}
           onPointerDown={onMove}
           onPointerLeave={() => setHover(null)}
@@ -134,7 +143,7 @@ export function CrowdChart({ info, result }: { info: QuestionInfo; result: Quest
         )}
       </div>
       <table class="sr-only">
-        <caption>Guesses by range</caption>
+        <caption>{caption} by range</caption>
         <tbody>
           {bins.map((n, i) =>
             n ? (

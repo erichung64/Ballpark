@@ -224,7 +224,10 @@ function Reveal({ info, result, last, onNext }: { info: QuestionInfo; result: Qu
           <CrowdChart info={info} result={result} />
         </>
       ) : (
-        <p class="compare early">You're one of the first to answer today. Check back later to see how everyone else guessed.</p>
+        <>
+          <p class="compare early">Once enough players answer, their guesses will appear here.</p>
+          <CrowdChart info={info} result={result} sample />
+        </>
       )}
 
       <p class="explain">
