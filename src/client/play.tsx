@@ -168,7 +168,7 @@ export function Play({ day, player, relaxed, firstDay, onFinish }: Props) {
             </div>
           </>
         ) : (
-          <Reveal info={info} result={r} last={qi === n - 1} onNext={next} />
+          <Reveal key={qi} info={info} result={r} last={qi === n - 1} onNext={next} />
         )}
       </main>
     </div>
@@ -192,6 +192,9 @@ function Reveal({ info, result, last, onNext }: { info: QuestionInfo; result: Qu
 
       <div class="verdict">
         <span class="verdict-points">
+          <svg class="score-ring" viewBox="0 0 80 80" aria-hidden="true">
+            <circle cx="40" cy="40" r="37" pathLength="100" strokeDasharray={`${result.points} 100`} />
+          </svg>
           <b>{result.points}</b>
           <span>points</span>
         </span>
@@ -224,10 +227,7 @@ function Reveal({ info, result, last, onNext }: { info: QuestionInfo; result: Qu
           <CrowdChart info={info} result={result} />
         </>
       ) : (
-        <>
-          <p class="compare early">Once enough players answer, their guesses will appear here.</p>
-          <CrowdChart info={info} result={result} sample />
-        </>
+        g != null && <GuessScale guess={g} answer={result.answer} />
       )}
 
       <p class="explain">
@@ -249,5 +249,22 @@ function Reveal({ info, result, last, onNext }: { info: QuestionInfo; result: Qu
         </button>
       </div>
     </div>
+  );
+}
+
+function GuessScale({ guess, answer }: { guess: number; answer: number }) {
+  const offset = Math.log2(guess) - Math.log2(answer);
+  // Keep the truth centered. Expand the scale for guesses beyond half or double.
+  const octaves = Math.max(1, Math.ceil(Math.abs(offset)));
+  const position = 50 + 50 * offset / octaves;
+  return (
+    <figure class="guess-scale" aria-label={`Your guess ${formatNum(guess)}. Answer ${formatNum(answer)}.`}>
+      <figcaption class="kicker">Your estimate</figcaption>
+      <div class="estimate-track" style={{ "--position": `${position}%` }}>
+        <i class="estimate-target" />
+        <i class="estimate-pin" />
+      </div>
+      <div class="scale-labels"><span>Low</span><strong>Answer</strong><span>High</span></div>
+    </figure>
   );
 }
